@@ -20,6 +20,8 @@
 html, body {
   margin: 0;
   padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
@@ -198,6 +200,11 @@ button.primary:disabled { opacity: 0.5; cursor: not-allowed; }
 }
 
 .stat {
+  /* grid items default to min-width:auto, which lets long unbroken content
+     (the monospace "#3444 of 4683" values) overflow the minmax(150px,1fr)
+     track instead of shrinking to it -- this was the actual cause of the
+     mobile horizontal-scroll bug, not the grid track sizing itself. */
+  min-width: 0;
   background: var(--panel-2);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -205,7 +212,7 @@ button.primary:disabled { opacity: 0.5; cursor: not-allowed; }
 }
 
 .stat .label { font-size: 0.76rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.03em; }
-.stat .value { font-size: 1.4rem; font-weight: 700; margin-top: 4px; font-family: var(--font-mono); }
+.stat .value { font-size: 1.4rem; font-weight: 700; margin-top: 4px; font-family: var(--font-mono); overflow-wrap: break-word; }
 .stat .value.risk { color: var(--accent); }
 .stat .value.safe { color: var(--safe); }
 .stat .value.warn { color: var(--warn); }
