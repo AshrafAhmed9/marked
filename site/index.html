@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Marked — bank run-risk from public filings</title>
+<meta name="description" content="Ranks every US bank on run risk using only public FDIC filings. Backtested against Silicon Valley Bank, Signature, First Republic, and every bank failure since 2019." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📉</text></svg>" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <h1>Marked</h1>
+    <p class="tagline">Bank run-risk, computed from public filings — not credit ratings, not regulatory capital ratios.</p>
+    <nav class="tabs" role="tablist" aria-label="Sections">
+      <button role="tab" id="tab-bank" aria-selected="true" aria-controls="panel-bank">Search a bank</button>
+      <button role="tab" id="tab-backtest" aria-selected="false" aria-controls="panel-backtest">Backtest</button>
+      <button role="tab" id="tab-today" aria-selected="false" aria-controls="panel-today">Today</button>
+      <button role="tab" id="tab-about" aria-selected="false" aria-controls="panel-about">How it works &amp; limits</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="panel-bank" role="tabpanel" aria-labelledby="tab-bank">
+      <div class="panel">
+        <h2>Search any of ~4,700 US banks</h2>
+        <div class="search-row">
+          <input type="search" id="bank-search" placeholder="Try “Silicon Valley Bank” or a bank name…" autocomplete="off" aria-label="Search bank name" />
+        </div>
+        <p class="hint" id="search-hint">Type at least 3 letters. Data: FDIC quarterly Call Reports, 2001–2026.</p>
+        <ul class="results-list hidden" id="search-results" aria-label="Search results"></ul>
+      </div>
+
+      <div class="panel hidden" id="bank-detail"></div>
+    </section>
+
+    <section id="panel-backtest" role="tabpanel" aria-labelledby="tab-backtest" class="hidden">
+      <div class="panel">
+        <h2>Every bank failure since 2019, ranked in advance</h2>
+        <p class="hint">Run risk score vs. the regulatory Tier&nbsp;1 risk-based capital ratio vs. a classic credit-failure ML model — all computed as of each quarter shown, using only data that would have been publicly filed by then.</p>
+        <div id="backtest-table" class="overflow-x"></div>
+      </div>
+
+      <div class="panel" id="deposit-flight-panel"></div>
+      <div class="panel" id="d2-panel"></div>
+      <div class="panel" id="permutation-panel"></div>
+    </section>
+
+    <section id="panel-today" role="tabpanel" aria-labelledby="tab-today" class="hidden">
+      <div class="panel" id="today-panel">
+        <h2>Where things stand today</h2>
+        <p class="hint">Loading…</p>
+      </div>
+    </section>
+
+    <section id="panel-about" role="tabpanel" aria-labelledby="tab-about" class="hidden">
+      <div class="panel limits">
+        <h2>How it works, in plain terms</h2>
+        <p>When interest rates rise, bonds a bank bought earlier lose market value. Banks are allowed to hold some bonds as "held to maturity," which lets them carry those bonds at their original cost on the books — the loss never shows up in the bank's official capital ratio unless the bank is forced to sell.</p>
+        <p>Deposits above $250,000 are not covered by FDIC insurance. If uninsured depositors get nervous and a large share of them try to withdraw at once, the bank may be forced to sell those bonds — realizing the loss all at once, right when it can least afford to.</p>
+        <p><strong>Marked's score</strong> is uninsured deposit share divided by mark-to-market equity (book equity minus the hidden bond loss). A bank with a lot of uninsured money sitting on capital that isn't really there scores high. This is two accounting inputs from public filings — no machine learning, no fitted weights, frozen before any historical backtest was run (see the repo's git history).</p>
+
+        <h2>Honest limits</h2>
+        <ul>
+          <li><strong>Fraud and credit failures are invisible to this model by design.</strong> Heartland Tri-State Bank (2023) failed from fraud, not a run — this score didn't flag it, and shouldn't be read as a general failure predictor. The classic ML baseline (trained the standard way) catches credit failures like Citizens Bank (Sac City) instead.</li>
+          <li><strong>Banks under roughly $1B in assets don't report uninsured deposits</strong> to the FDIC in a way this API exposes. They're shown as "not reported," never treated as safe.</li>
+          <li><strong>Across all banks</strong>, the 2022Q3 score did not predict which banks lost the most deposits in the Q1 2023 panic (AUC ≈ 0.49, no better than chance) — small-bank deposit swings are seasonal and noisy. <strong>Restricted to the ~1,000 banks that report uninsured deposits</strong>, it does (AUC ≈ 0.64 vs. 0.39 for the regulatory ratio). The claim is scoped accordingly, not to "every bank."</li>
+          <li><strong>First Republic's losses were concentrated in low-rate mortgages</strong>, not bonds. This model only marks bond losses, so First Republic likely ranks lower than its true risk. We checked whether loan-level repricing data was available from the free FDIC API to fix this and it isn't — documented as a known gap, not silently patched.</li>
+          <li><strong>This is a research prototype, not financial advice, not a regulatory tool, and not a guarantee about any bank.</strong> It estimates exposure from public accounting data; it does not know about a bank's off-balance-sheet hedges, parent-company support, or private information.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <p class="disclaimer">
+    Research prototype for the Global Innovation Build Challenge V2, built from public FDIC Call Report data (banks.data.fdic.gov). Not financial advice, not a diagnostic or regulatory tool, and not an assertion that any currently operating bank will fail. See "How it works &amp; limits" for what this model does and does not capture. Source: <a href="https://github.com/ashrafahmed1232/marked" target="_blank" rel="noopener">GitHub</a>.
+  </p>
+</div>
+
+<script src="chart.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

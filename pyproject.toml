@@ -1,0 +1,22 @@
+[project]
+name = "marked"
+version = "0.1.0"
+description = "Bank run-risk backtesting from public FDIC filings"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.2",
+    "pyarrow>=17.0",
+    "requests>=2.32",
+    "scikit-learn>=1.5",
+    "numpy>=1.26",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+

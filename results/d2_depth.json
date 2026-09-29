@@ -1,0 +1,107 @@
+{
+  "named": {
+    "IndyMac Bank": [
+      {
+        "repdte": "20061231",
+        "n_banks": 8676,
+        "rank_run_risk": 345,
+        "rank_tier1": 2624,
+        "uninsured_share": 0.252
+      },
+      {
+        "repdte": "20070331",
+        "n_banks": 8648,
+        "rank_run_risk": 356,
+        "rank_tier1": 2181,
+        "uninsured_share": 0.257
+      },
+      {
+        "repdte": "20070630",
+        "n_banks": 8613,
+        "rank_run_risk": 385,
+        "rank_tier1": 3020,
+        "uninsured_share": 0.264
+      },
+      {
+        "repdte": "20070930",
+        "n_banks": 8557,
+        "rank_run_risk": 525,
+        "rank_tier1": 2509,
+        "uninsured_share": 0.18
+      },
+      {
+        "repdte": "20071231",
+        "n_banks": 8531,
+        "rank_run_risk": 491,
+        "rank_tier1": 823,
+        "uninsured_share": 0.167
+      },
+      {
+        "repdte": "20080331",
+        "n_banks": 8490,
+        "rank_run_risk": 540,
+        "rank_tier1": 305,
+        "uninsured_share": 0.132
+      },
+      {
+        "repdte": "20080630",
+        "n_banks": 8450,
+        "rank_run_risk": 273,
+        "rank_tier1": 8,
+        "uninsured_share": 0.138
+      }
+    ],
+    "Washington Mutual": [
+      {
+        "repdte": "20061231",
+        "n_banks": 8676,
+        "rank_run_risk": 249,
+        "rank_tier1": 70,
+        "uninsured_share": 0.335
+      },
+      {
+        "repdte": "20070331",
+        "n_banks": 8648,
+        "rank_run_risk": 278,
+        "rank_tier1": 43,
+        "uninsured_share": 0.321
+      },
+      {
+        "repdte": "20070630",
+        "n_banks": 8613,
+        "rank_run_risk": 320,
+        "rank_tier1": 78,
+        "uninsured_share": 0.308
+      },
+      {
+        "repdte": "20070930",
+        "n_banks": 8557,
+        "rank_run_risk": 302,
+        "rank_tier1": 36,
+        "uninsured_share": 0.29
+      },
+      {
+        "repdte": "20071231",
+        "n_banks": 8531,
+        "rank_run_risk": 363,
+        "rank_tier1": 120,
+        "uninsured_share": 0.259
+      },
+      {
+        "repdte": "20080331",
+        "n_banks": 8490,
+        "rank_run_risk": 378,
+        "rank_tier1": 117,
+        "uninsured_share": 0.244
+      },
+      {
+        "repdte": "20080630",
+        "n_banks": 8450,
+        "rank_run_risk": 395,
+        "rank_tier1": 175,
+        "uninsured_share": 0.239
+      }
+    ]
+  },
+  "field_availability_note": "SCHF (HTM fair value) is null for IndyMac and WaMu in every checked 2007-2008 quarter; per backtest.py's null-handling, htm_unrealized_loss is reported as 0 for those bank-quarters rather than inferred. run_risk_score for this era is therefore driven mostly by uninsured_share. Reported as a limitation."
+}

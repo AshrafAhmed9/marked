@@ -1,0 +1,1668 @@
+{
+  "section_a_failure_ranks": [
+    {
+      "cert": 10716,
+      "name": "ENLOE STATE BANK",
+      "faildate": "2019-05-31",
+      "repdte": "20190331",
+      "quarters_before": 1,
+      "n_banks": 5361,
+      "rank_run_risk": 750,
+      "rank_tier1": 392,
+      "rank_classic": 1434,
+      "run_driven": false
+    },
+    {
+      "cert": 10716,
+      "name": "ENLOE STATE BANK",
+      "faildate": "2019-05-31",
+      "repdte": "20181231",
+      "quarters_before": 2,
+      "n_banks": 5405,
+      "rank_run_risk": 717,
+      "rank_tier1": 327,
+      "rank_classic": 1066,
+      "run_driven": false
+    },
+    {
+      "cert": 10716,
+      "name": "ENLOE STATE BANK",
+      "faildate": "2019-05-31",
+      "repdte": "20180930",
+      "quarters_before": 3,
+      "n_banks": 5477,
+      "rank_run_risk": 715,
+      "rank_tier1": 1219,
+      "rank_classic": 2337,
+      "run_driven": false
+    },
+    {
+      "cert": 10716,
+      "name": "ENLOE STATE BANK",
+      "faildate": "2019-05-31",
+      "repdte": "20180630",
+      "quarters_before": 4,
+      "n_banks": 5541,
+      "rank_run_risk": 725,
+      "rank_tier1": 1145,
+      "rank_classic": 2105,
+      "run_driven": false
+    },
+    {
+      "cert": 10716,
+      "name": "ENLOE STATE BANK",
+      "faildate": "2019-05-31",
+      "repdte": "20180331",
+      "quarters_before": 5,
+      "n_banks": 5605,
+      "rank_run_risk": 730,
+      "rank_tier1": 1834,
+      "rank_classic": 1499,
+      "run_driven": false
+    },
+    {
+      "cert": 58112,
+      "name": "LOUISA COMMUNITY BANK",
+      "faildate": "2019-10-25",
+      "repdte": "20190930",
+      "quarters_before": 1,
+      "n_banks": 5258,
+      "rank_run_risk": 748,
+      "rank_tier1": 2,
+      "rank_classic": 6,
+      "run_driven": false
+    },
+    {
+      "cert": 58112,
+      "name": "LOUISA COMMUNITY BANK",
+      "faildate": "2019-10-25",
+      "repdte": "20190630",
+      "quarters_before": 2,
+      "n_banks": 5303,
+      "rank_run_risk": 745,
+      "rank_tier1": 1,
+      "rank_classic": 3,
+      "run_driven": false
+    },
+    {
+      "cert": 58112,
+      "name": "LOUISA COMMUNITY BANK",
+      "faildate": "2019-10-25",
+      "repdte": "20190331",
+      "quarters_before": 3,
+      "n_banks": 5361,
+      "rank_run_risk": 750,
+      "rank_tier1": 8,
+      "rank_classic": 11,
+      "run_driven": false
+    },
+    {
+      "cert": 58112,
+      "name": "LOUISA COMMUNITY BANK",
+      "faildate": "2019-10-25",
+      "repdte": "20181231",
+      "quarters_before": 4,
+      "n_banks": 5405,
+      "rank_run_risk": 717,
+      "rank_tier1": 17,
+      "rank_classic": 14,
+      "run_driven": false
+    },
+    {
+      "cert": 58112,
+      "name": "LOUISA COMMUNITY BANK",
+      "faildate": "2019-10-25",
+      "repdte": "20180930",
+      "quarters_before": 5,
+      "n_banks": 5477,
+      "rank_run_risk": 715,
+      "rank_tier1": 42,
+      "rank_classic": 29,
+      "run_driven": false
+    },
+    {
+      "cert": 58112,
+      "name": "LOUISA COMMUNITY BANK",
+      "faildate": "2019-10-25",
+      "repdte": "20180630",
+      "quarters_before": 6,
+      "n_banks": 5541,
+      "rank_run_risk": 725,
+      "rank_tier1": 219,
+      "rank_classic": 36,
+      "run_driven": false
+    },
+    {
+      "cert": 58317,
+      "name": "RESOLUTE BANK",
+      "faildate": "2019-10-25",
+      "repdte": "20190930",
+      "quarters_before": 1,
+      "n_banks": 5258,
+      "rank_run_risk": 748,
+      "rank_tier1": 1,
+      "rank_classic": 7,
+      "run_driven": false
+    },
+    {
+      "cert": 58317,
+      "name": "RESOLUTE BANK",
+      "faildate": "2019-10-25",
+      "repdte": "20190630",
+      "quarters_before": 2,
+      "n_banks": 5303,
+      "rank_run_risk": 745,
+      "rank_tier1": 6,
+      "rank_classic": 7,
+      "run_driven": false
+    },
+    {
+      "cert": 58317,
+      "name": "RESOLUTE BANK",
+      "faildate": "2019-10-25",
+      "repdte": "20190331",
+      "quarters_before": 3,
+      "n_banks": 5361,
+      "rank_run_risk": 750,
+      "rank_tier1": 4,
+      "rank_classic": 3,
+      "run_driven": false
+    },
+    {
+      "cert": 58317,
+      "name": "RESOLUTE BANK",
+      "faildate": "2019-10-25",
+      "repdte": "20181231",
+      "quarters_before": 4,
+      "n_banks": 5405,
+      "rank_run_risk": 717,
+      "rank_tier1": 21,
+      "rank_classic": 7,
+      "run_driven": false
+    },
+    {
+      "cert": 58317,
+      "name": "RESOLUTE BANK",
+      "faildate": "2019-10-25",
+      "repdte": "20180930",
+      "quarters_before": 5,
+      "n_banks": 5477,
+      "rank_run_risk": 715,
+      "rank_tier1": 137,
+      "rank_classic": 8,
+      "run_driven": false
+    },
+    {
+      "cert": 58317,
+      "name": "RESOLUTE BANK",
+      "faildate": "2019-10-25",
+      "repdte": "20180630",
+      "quarters_before": 6,
+      "n_banks": 5541,
+      "rank_run_risk": 725,
+      "rank_tier1": 36,
+      "rank_classic": 26,
+      "run_driven": false
+    },
+    {
+      "cert": 21111,
+      "name": "CITY NATIONAL BANK OF NEW JERSEY",
+      "faildate": "2019-11-01",
+      "repdte": "20190930",
+      "quarters_before": 1,
+      "n_banks": 5258,
+      "rank_run_risk": 748,
+      "rank_tier1": 8,
+      "rank_classic": 30,
+      "run_driven": false
+    },
+    {
+      "cert": 21111,
+      "name": "CITY NATIONAL BANK OF NEW JERSEY",
+      "faildate": "2019-11-01",
+      "repdte": "20190630",
+      "quarters_before": 2,
+      "n_banks": 5303,
+      "rank_run_risk": 745,
+      "rank_tier1": 7,
+      "rank_classic": 33,
+      "run_driven": false
+    },
+    {
+      "cert": 21111,
+      "name": "CITY NATIONAL BANK OF NEW JERSEY",
+      "faildate": "2019-11-01",
+      "repdte": "20190331",
+      "quarters_before": 3,
+      "n_banks": 5361,
+      "rank_run_risk": 750,
+      "rank_tier1": 13,
+      "rank_classic": 46,
+      "run_driven": false
+    },
+    {
+      "cert": 21111,
+      "name": "CITY NATIONAL BANK OF NEW JERSEY",
+      "faildate": "2019-11-01",
+      "repdte": "20181231",
+      "quarters_before": 4,
+      "n_banks": 5405,
+      "rank_run_risk": 717,
+      "rank_tier1": 5,
+      "rank_classic": 21,
+      "run_driven": false
+    },
+    {
+      "cert": 21111,
+      "name": "CITY NATIONAL BANK OF NEW JERSEY",
+      "faildate": "2019-11-01",
+      "repdte": "20180930",
+      "quarters_before": 5,
+      "n_banks": 5477,
+      "rank_run_risk": 715,
+      "rank_tier1": 3,
+      "rank_classic": 9,
+      "run_driven": false
+    },
+    {
+      "cert": 21111,
+      "name": "CITY NATIONAL BANK OF NEW JERSEY",
+      "faildate": "2019-11-01",
+      "repdte": "20180630",
+      "quarters_before": 6,
+      "n_banks": 5541,
+      "rank_run_risk": 725,
+      "rank_tier1": 4,
+      "rank_classic": 9,
+      "run_driven": false
+    },
+    {
+      "cert": 18265,
+      "name": "ERICSON STATE BANK",
+      "faildate": "2020-02-14",
+      "repdte": "20191231",
+      "quarters_before": 1,
+      "n_banks": 5176,
+      "rank_run_risk": 737,
+      "rank_tier1": 4,
+      "rank_classic": 6,
+      "run_driven": false
+    },
+    {
+      "cert": 18265,
+      "name": "ERICSON STATE BANK",
+      "faildate": "2020-02-14",
+      "repdte": "20190930",
+      "quarters_before": 2,
+      "n_banks": 5258,
+      "rank_run_risk": 748,
+      "rank_tier1": 21,
+      "rank_classic": 53,
+      "run_driven": false
+    },
+    {
+      "cert": 18265,
+      "name": "ERICSON STATE BANK",
+      "faildate": "2020-02-14",
+      "repdte": "20190630",
+      "quarters_before": 3,
+      "n_banks": 5303,
+      "rank_run_risk": 745,
+      "rank_tier1": 17,
+      "rank_classic": 45,
+      "run_driven": false
+    },
+    {
+      "cert": 18265,
+      "name": "ERICSON STATE BANK",
+      "faildate": "2020-02-14",
+      "repdte": "20190331",
+      "quarters_before": 4,
+      "n_banks": 5361,
+      "rank_run_risk": 750,
+      "rank_tier1": 22,
+      "rank_classic": 40,
+      "run_driven": false
+    },
+    {
+      "cert": 18265,
+      "name": "ERICSON STATE BANK",
+      "faildate": "2020-02-14",
+      "repdte": "20181231",
+      "quarters_before": 5,
+      "n_banks": 5405,
+      "rank_run_risk": 717,
+      "rank_tier1": 30,
+      "rank_classic": 37,
+      "run_driven": false
+    },
+    {
+      "cert": 18265,
+      "name": "ERICSON STATE BANK",
+      "faildate": "2020-02-14",
+      "repdte": "20180930",
+      "quarters_before": 6,
+      "n_banks": 5477,
+      "rank_run_risk": 715,
+      "rank_tier1": 1002,
+      "rank_classic": 1297,
+      "run_driven": false
+    },
+    {
+      "cert": 14361,
+      "name": "THE FIRST STATE BANK",
+      "faildate": "2020-04-03",
+      "repdte": "20200331",
+      "quarters_before": 1,
+      "n_banks": 5114,
+      "rank_run_risk": 779,
+      "rank_tier1": 1705,
+      "rank_classic": 1,
+      "run_driven": false
+    },
+    {
+      "cert": 14361,
+      "name": "THE FIRST STATE BANK",
+      "faildate": "2020-04-03",
+      "repdte": "20191231",
+      "quarters_before": 2,
+      "n_banks": 5176,
+      "rank_run_risk": 737,
+      "rank_tier1": 1,
+      "rank_classic": 2,
+      "run_driven": false
+    },
+    {
+      "cert": 14361,
+      "name": "THE FIRST STATE BANK",
+      "faildate": "2020-04-03",
+      "repdte": "20190930",
+      "quarters_before": 3,
+      "n_banks": 5258,
+      "rank_run_risk": 748,
+      "rank_tier1": 3,
+      "rank_classic": 2,
+      "run_driven": false
+    },
+    {
+      "cert": 14361,
+      "name": "THE FIRST STATE BANK",
+      "faildate": "2020-04-03",
+      "repdte": "20190630",
+      "quarters_before": 4,
+      "n_banks": 5303,
+      "rank_run_risk": 745,
+      "rank_tier1": 3,
+      "rank_classic": 1,
+      "run_driven": false
+    },
+    {
+      "cert": 14361,
+      "name": "THE FIRST STATE BANK",
+      "faildate": "2020-04-03",
+      "repdte": "20190331",
+      "quarters_before": 5,
+      "n_banks": 5361,
+      "rank_run_risk": 750,
+      "rank_tier1": 3,
+      "rank_classic": 1,
+      "run_driven": false
+    },
+    {
+      "cert": 14361,
+      "name": "THE FIRST STATE BANK",
+      "faildate": "2020-04-03",
+      "repdte": "20181231",
+      "quarters_before": 6,
+      "n_banks": 5405,
+      "rank_run_risk": 717,
+      "rank_tier1": 2,
+      "rank_classic": 1,
+      "run_driven": false
+    },
+    {
+      "cert": 16748,
+      "name": "FIRST CITY BANK OF FLORIDA",
+      "faildate": "2020-10-16",
+      "repdte": "20200930",
+      "quarters_before": 1,
+      "n_banks": 5033,
+      "rank_run_risk": 767,
+      "rank_tier1": 1903,
+      "rank_classic": 30,
+      "run_driven": false
+    },
+    {
+      "cert": 16748,
+      "name": "FIRST CITY BANK OF FLORIDA",
+      "faildate": "2020-10-16",
+      "repdte": "20200630",
+      "quarters_before": 2,
+      "n_banks": 5066,
+      "rank_run_risk": 773,
+      "rank_tier1": 1848,
+      "rank_classic": 21,
+      "run_driven": false
+    },
+    {
+      "cert": 16748,
+      "name": "FIRST CITY BANK OF FLORIDA",
+      "faildate": "2020-10-16",
+      "repdte": "20200331",
+      "quarters_before": 3,
+      "n_banks": 5114,
+      "rank_run_risk": 779,
+      "rank_tier1": 1706,
+      "rank_classic": 7,
+      "run_driven": false
+    },
+    {
+      "cert": 16748,
+      "name": "FIRST CITY BANK OF FLORIDA",
+      "faildate": "2020-10-16",
+      "repdte": "20191231",
+      "quarters_before": 4,
+      "n_banks": 5176,
+      "rank_run_risk": 737,
+      "rank_tier1": 3,
+      "rank_classic": 9,
+      "run_driven": false
+    },
+    {
+      "cert": 16748,
+      "name": "FIRST CITY BANK OF FLORIDA",
+      "faildate": "2020-10-16",
+      "repdte": "20190930",
+      "quarters_before": 5,
+      "n_banks": 5258,
+      "rank_run_risk": 748,
+      "rank_tier1": 5,
+      "rank_classic": 10,
+      "run_driven": false
+    },
+    {
+      "cert": 16748,
+      "name": "FIRST CITY BANK OF FLORIDA",
+      "faildate": "2020-10-16",
+      "repdte": "20190630",
+      "quarters_before": 6,
+      "n_banks": 5303,
+      "rank_run_risk": 745,
+      "rank_tier1": 2,
+      "rank_classic": 9,
+      "run_driven": false
+    },
+    {
+      "cert": 15426,
+      "name": "ALMENA STATE BANK",
+      "faildate": "2020-10-23",
+      "repdte": "20200930",
+      "quarters_before": 1,
+      "n_banks": 5033,
+      "rank_run_risk": 767,
+      "rank_tier1": 1902,
+      "rank_classic": 1,
+      "run_driven": false
+    },
+    {
+      "cert": 15426,
+      "name": "ALMENA STATE BANK",
+      "faildate": "2020-10-23",
+      "repdte": "20200630",
+      "quarters_before": 2,
+      "n_banks": 5066,
+      "rank_run_risk": 773,
+      "rank_tier1": 1847,
+      "rank_classic": 1,
+      "run_driven": false
+    },
+    {
+      "cert": 15426,
+      "name": "ALMENA STATE BANK",
+      "faildate": "2020-10-23",
+      "repdte": "20200331",
+      "quarters_before": 3,
+      "n_banks": 5114,
+      "rank_run_risk": 779,
+      "rank_tier1": 1709,
+      "rank_classic": 3,
+      "run_driven": false
+    },
+    {
+      "cert": 15426,
+      "name": "ALMENA STATE BANK",
+      "faildate": "2020-10-23",
+      "repdte": "20191231",
+      "quarters_before": 4,
+      "n_banks": 5176,
+      "rank_run_risk": 737,
+      "rank_tier1": 7,
+      "rank_classic": 1,
+      "run_driven": false
+    },
+    {
+      "cert": 15426,
+      "name": "ALMENA STATE BANK",
+      "faildate": "2020-10-23",
+      "repdte": "20190930",
+      "quarters_before": 5,
+      "n_banks": 5258,
+      "rank_run_risk": 748,
+      "rank_tier1": 9,
+      "rank_classic": 1,
+      "run_driven": false
+    },
+    {
+      "cert": 15426,
+      "name": "ALMENA STATE BANK",
+      "faildate": "2020-10-23",
+      "repdte": "20190630",
+      "quarters_before": 6,
+      "n_banks": 5303,
+      "rank_run_risk": 745,
+      "rank_tier1": 10,
+      "rank_classic": 4,
+      "run_driven": false
+    },
+    {
+      "cert": 24735,
+      "name": "SILICON VALLEY BANK",
+      "faildate": "2023-03-10",
+      "repdte": "20221231",
+      "quarters_before": 1,
+      "n_banks": 4683,
+      "rank_run_risk": 2,
+      "rank_tier1": 3444,
+      "rank_classic": 2579,
+      "run_driven": true
+    },
+    {
+      "cert": 24735,
+      "name": "SILICON VALLEY BANK",
+      "faildate": "2023-03-10",
+      "repdte": "20220930",
+      "quarters_before": 2,
+      "n_banks": 4713,
+      "rank_run_risk": 1,
+      "rank_tier1": 3500,
+      "rank_classic": 2678,
+      "run_driven": true
+    },
+    {
+      "cert": 24735,
+      "name": "SILICON VALLEY BANK",
+      "faildate": "2023-03-10",
+      "repdte": "20220630",
+      "quarters_before": 3,
+      "n_banks": 4761,
+      "rank_run_risk": 3,
+      "rank_tier1": 3469,
+      "rank_classic": 2571,
+      "run_driven": true
+    },
+    {
+      "cert": 24735,
+      "name": "SILICON VALLEY BANK",
+      "faildate": "2023-03-10",
+      "repdte": "20220331",
+      "quarters_before": 4,
+      "n_banks": 4795,
+      "rank_run_risk": 2,
+      "rank_tier1": 3283,
+      "rank_classic": 1820,
+      "run_driven": true
+    },
+    {
+      "cert": 24735,
+      "name": "SILICON VALLEY BANK",
+      "faildate": "2023-03-10",
+      "repdte": "20211231",
+      "quarters_before": 5,
+      "n_banks": 4838,
+      "rank_run_risk": 4,
+      "rank_tier1": 3318,
+      "rank_classic": 1432,
+      "run_driven": true
+    },
+    {
+      "cert": 24735,
+      "name": "SILICON VALLEY BANK",
+      "faildate": "2023-03-10",
+      "repdte": "20210930",
+      "quarters_before": 6,
+      "n_banks": 4914,
+      "rank_run_risk": 4,
+      "rank_tier1": 3230,
+      "rank_classic": 1273,
+      "run_driven": true
+    },
+    {
+      "cert": 57053,
+      "name": "SIGNATURE BANK",
+      "faildate": "2023-03-12",
+      "repdte": "20221231",
+      "quarters_before": 1,
+      "n_banks": 4683,
+      "rank_run_risk": 21,
+      "rank_tier1": 2069,
+      "rank_classic": 763,
+      "run_driven": true
+    },
+    {
+      "cert": 57053,
+      "name": "SIGNATURE BANK",
+      "faildate": "2023-03-12",
+      "repdte": "20220930",
+      "quarters_before": 2,
+      "n_banks": 4713,
+      "rank_run_risk": 24,
+      "rank_tier1": 1924,
+      "rank_classic": 749,
+      "run_driven": true
+    },
+    {
+      "cert": 57053,
+      "name": "SIGNATURE BANK",
+      "faildate": "2023-03-12",
+      "repdte": "20220630",
+      "quarters_before": 3,
+      "n_banks": 4761,
+      "rank_run_risk": 12,
+      "rank_tier1": 1910,
+      "rank_classic": 651,
+      "run_driven": true
+    },
+    {
+      "cert": 57053,
+      "name": "SIGNATURE BANK",
+      "faildate": "2023-03-12",
+      "repdte": "20220331",
+      "quarters_before": 4,
+      "n_banks": 4795,
+      "rank_run_risk": 5,
+      "rank_tier1": 2013,
+      "rank_classic": 309,
+      "run_driven": true
+    },
+    {
+      "cert": 57053,
+      "name": "SIGNATURE BANK",
+      "faildate": "2023-03-12",
+      "repdte": "20211231",
+      "quarters_before": 5,
+      "n_banks": 4838,
+      "rank_run_risk": 3,
+      "rank_tier1": 1843,
+      "rank_classic": 124,
+      "run_driven": true
+    },
+    {
+      "cert": 57053,
+      "name": "SIGNATURE BANK",
+      "faildate": "2023-03-12",
+      "repdte": "20210930",
+      "quarters_before": 6,
+      "n_banks": 4914,
+      "rank_run_risk": 2,
+      "rank_tier1": 2089,
+      "rank_classic": 152,
+      "run_driven": true
+    },
+    {
+      "cert": 59017,
+      "name": "FIRST REPUBLIC BANK",
+      "faildate": "2023-05-01",
+      "repdte": "20230331",
+      "quarters_before": 1,
+      "n_banks": 4658,
+      "rank_run_risk": 44,
+      "rank_tier1": 2204,
+      "rank_classic": 2148,
+      "run_driven": true
+    },
+    {
+      "cert": 59017,
+      "name": "FIRST REPUBLIC BANK",
+      "faildate": "2023-05-01",
+      "repdte": "20221231",
+      "quarters_before": 2,
+      "n_banks": 4683,
+      "rank_run_risk": 33,
+      "rank_tier1": 2205,
+      "rank_classic": 3228,
+      "run_driven": true
+    },
+    {
+      "cert": 59017,
+      "name": "FIRST REPUBLIC BANK",
+      "faildate": "2023-05-01",
+      "repdte": "20220930",
+      "quarters_before": 3,
+      "n_banks": 4713,
+      "rank_run_risk": 33,
+      "rank_tier1": 2215,
+      "rank_classic": 3465,
+      "run_driven": true
+    },
+    {
+      "cert": 59017,
+      "name": "FIRST REPUBLIC BANK",
+      "faildate": "2023-05-01",
+      "repdte": "20220630",
+      "quarters_before": 4,
+      "n_banks": 4761,
+      "rank_run_risk": 25,
+      "rank_tier1": 2205,
+      "rank_classic": 3436,
+      "run_driven": true
+    },
+    {
+      "cert": 59017,
+      "name": "FIRST REPUBLIC BANK",
+      "faildate": "2023-05-01",
+      "repdte": "20220331",
+      "quarters_before": 5,
+      "n_banks": 4795,
+      "rank_run_risk": 28,
+      "rank_tier1": 2324,
+      "rank_classic": 3412,
+      "run_driven": true
+    },
+    {
+      "cert": 59017,
+      "name": "FIRST REPUBLIC BANK",
+      "faildate": "2023-05-01",
+      "repdte": "20211231",
+      "quarters_before": 6,
+      "n_banks": 4838,
+      "rank_run_risk": 21,
+      "rank_tier1": 2463,
+      "rank_classic": 2710,
+      "run_driven": true
+    },
+    {
+      "cert": 25851,
+      "name": "HEARTLAND TRI-STATE BANK",
+      "faildate": "2023-07-28",
+      "repdte": "20230331",
+      "quarters_before": 2,
+      "n_banks": 4658,
+      "rank_run_risk": 958,
+      "rank_tier1": 3823,
+      "rank_classic": 845,
+      "run_driven": false
+    },
+    {
+      "cert": 25851,
+      "name": "HEARTLAND TRI-STATE BANK",
+      "faildate": "2023-07-28",
+      "repdte": "20221231",
+      "quarters_before": 3,
+      "n_banks": 4683,
+      "rank_run_risk": 916,
+      "rank_tier1": 3756,
+      "rank_classic": 933,
+      "run_driven": false
+    },
+    {
+      "cert": 25851,
+      "name": "HEARTLAND TRI-STATE BANK",
+      "faildate": "2023-07-28",
+      "repdte": "20220930",
+      "quarters_before": 4,
+      "n_banks": 4713,
+      "rank_run_risk": 918,
+      "rank_tier1": 3753,
+      "rank_classic": 1024,
+      "run_driven": false
+    },
+    {
+      "cert": 25851,
+      "name": "HEARTLAND TRI-STATE BANK",
+      "faildate": "2023-07-28",
+      "repdte": "20220630",
+      "quarters_before": 5,
+      "n_banks": 4761,
+      "rank_run_risk": 925,
+      "rank_tier1": 3765,
+      "rank_classic": 977,
+      "run_driven": false
+    },
+    {
+      "cert": 25851,
+      "name": "HEARTLAND TRI-STATE BANK",
+      "faildate": "2023-07-28",
+      "repdte": "20220331",
+      "quarters_before": 6,
+      "n_banks": 4795,
+      "rank_run_risk": 935,
+      "rank_tier1": 4133,
+      "rank_classic": 953,
+      "run_driven": false
+    },
+    {
+      "cert": 8758,
+      "name": "CITIZENS BANK",
+      "faildate": "2023-11-03",
+      "repdte": "20230630",
+      "quarters_before": 2,
+      "n_banks": 4627,
+      "rank_run_risk": 951,
+      "rank_tier1": 1837,
+      "rank_classic": 29,
+      "run_driven": false
+    },
+    {
+      "cert": 8758,
+      "name": "CITIZENS BANK",
+      "faildate": "2023-11-03",
+      "repdte": "20230331",
+      "quarters_before": 3,
+      "n_banks": 4658,
+      "rank_run_risk": 958,
+      "rank_tier1": 2100,
+      "rank_classic": 28,
+      "run_driven": false
+    },
+    {
+      "cert": 8758,
+      "name": "CITIZENS BANK",
+      "faildate": "2023-11-03",
+      "repdte": "20221231",
+      "quarters_before": 4,
+      "n_banks": 4683,
+      "rank_run_risk": 916,
+      "rank_tier1": 2293,
+      "rank_classic": 26,
+      "run_driven": false
+    },
+    {
+      "cert": 8758,
+      "name": "CITIZENS BANK",
+      "faildate": "2023-11-03",
+      "repdte": "20220930",
+      "quarters_before": 5,
+      "n_banks": 4713,
+      "rank_run_risk": 918,
+      "rank_tier1": 2216,
+      "rank_classic": 26,
+      "run_driven": false
+    },
+    {
+      "cert": 8758,
+      "name": "CITIZENS BANK",
+      "faildate": "2023-11-03",
+      "repdte": "20220630",
+      "quarters_before": 6,
+      "n_banks": 4761,
+      "rank_run_risk": 925,
+      "rank_tier1": 2400,
+      "rank_classic": 44,
+      "run_driven": false
+    },
+    {
+      "cert": 27332,
+      "name": "REPUBLIC BANK",
+      "faildate": "2024-04-26",
+      "repdte": "20231231",
+      "quarters_before": 2,
+      "n_banks": 4571,
+      "rank_run_risk": 1,
+      "rank_tier1": 1667,
+      "rank_classic": 96,
+      "run_driven": true
+    },
+    {
+      "cert": 27332,
+      "name": "REPUBLIC BANK",
+      "faildate": "2024-04-26",
+      "repdte": "20230930",
+      "quarters_before": 3,
+      "n_banks": 4583,
+      "rank_run_risk": 2,
+      "rank_tier1": 1696,
+      "rank_classic": 90,
+      "run_driven": true
+    },
+    {
+      "cert": 27332,
+      "name": "REPUBLIC BANK",
+      "faildate": "2024-04-26",
+      "repdte": "20230630",
+      "quarters_before": 4,
+      "n_banks": 4627,
+      "rank_run_risk": 1,
+      "rank_tier1": 1689,
+      "rank_classic": 159,
+      "run_driven": true
+    },
+    {
+      "cert": 27332,
+      "name": "REPUBLIC BANK",
+      "faildate": "2024-04-26",
+      "repdte": "20230331",
+      "quarters_before": 5,
+      "n_banks": 4658,
+      "rank_run_risk": 1,
+      "rank_tier1": 1676,
+      "rank_classic": 146,
+      "run_driven": true
+    },
+    {
+      "cert": 27332,
+      "name": "REPUBLIC BANK",
+      "faildate": "2024-04-26",
+      "repdte": "20221231",
+      "quarters_before": 6,
+      "n_banks": 4683,
+      "rank_run_risk": 1,
+      "rank_tier1": 1677,
+      "rank_classic": 247,
+      "run_driven": true
+    },
+    {
+      "cert": 4134,
+      "name": "FIRST NB OF LINDSAY",
+      "faildate": "2024-10-18",
+      "repdte": "20240930",
+      "quarters_before": 1,
+      "n_banks": 4508,
+      "rank_run_risk": 973,
+      "rank_tier1": 1,
+      "rank_classic": 86,
+      "run_driven": false
+    },
+    {
+      "cert": 4134,
+      "name": "FIRST NB OF LINDSAY",
+      "faildate": "2024-10-18",
+      "repdte": "20240630",
+      "quarters_before": 2,
+      "n_banks": 4525,
+      "rank_run_risk": 983,
+      "rank_tier1": 1,
+      "rank_classic": 1755,
+      "run_driven": false
+    },
+    {
+      "cert": 4134,
+      "name": "FIRST NB OF LINDSAY",
+      "faildate": "2024-10-18",
+      "repdte": "20240331",
+      "quarters_before": 3,
+      "n_banks": 4552,
+      "rank_run_risk": 985,
+      "rank_tier1": 1,
+      "rank_classic": 2547,
+      "run_driven": false
+    },
+    {
+      "cert": 4134,
+      "name": "FIRST NB OF LINDSAY",
+      "faildate": "2024-10-18",
+      "repdte": "20231231",
+      "quarters_before": 4,
+      "n_banks": 4571,
+      "rank_run_risk": 943,
+      "rank_tier1": 1,
+      "rank_classic": 2653,
+      "run_driven": false
+    },
+    {
+      "cert": 4134,
+      "name": "FIRST NB OF LINDSAY",
+      "faildate": "2024-10-18",
+      "repdte": "20230930",
+      "quarters_before": 5,
+      "n_banks": 4583,
+      "rank_run_risk": 946,
+      "rank_tier1": 1,
+      "rank_classic": 3451,
+      "run_driven": false
+    },
+    {
+      "cert": 4134,
+      "name": "FIRST NB OF LINDSAY",
+      "faildate": "2024-10-18",
+      "repdte": "20230630",
+      "quarters_before": 6,
+      "n_banks": 4627,
+      "rank_run_risk": 951,
+      "rank_tier1": 1,
+      "rank_classic": 3418,
+      "run_driven": false
+    },
+    {
+      "cert": 28611,
+      "name": "PULASKI SAVINGS BANK",
+      "faildate": "2025-01-17",
+      "repdte": "20240930",
+      "quarters_before": 2,
+      "n_banks": 4508,
+      "rank_run_risk": 973,
+      "rank_tier1": 3949,
+      "rank_classic": 2969,
+      "run_driven": false
+    },
+    {
+      "cert": 28611,
+      "name": "PULASKI SAVINGS BANK",
+      "faildate": "2025-01-17",
+      "repdte": "20240630",
+      "quarters_before": 3,
+      "n_banks": 4525,
+      "rank_run_risk": 983,
+      "rank_tier1": 4001,
+      "rank_classic": 3123,
+      "run_driven": false
+    },
+    {
+      "cert": 28611,
+      "name": "PULASKI SAVINGS BANK",
+      "faildate": "2025-01-17",
+      "repdte": "20240331",
+      "quarters_before": 4,
+      "n_banks": 4552,
+      "rank_run_risk": 985,
+      "rank_tier1": 4173,
+      "rank_classic": 3682,
+      "run_driven": false
+    },
+    {
+      "cert": 28611,
+      "name": "PULASKI SAVINGS BANK",
+      "faildate": "2025-01-17",
+      "repdte": "20231231",
+      "quarters_before": 5,
+      "n_banks": 4571,
+      "rank_run_risk": 943,
+      "rank_tier1": 4085,
+      "rank_classic": 3852,
+      "run_driven": false
+    },
+    {
+      "cert": 28611,
+      "name": "PULASKI SAVINGS BANK",
+      "faildate": "2025-01-17",
+      "repdte": "20230930",
+      "quarters_before": 6,
+      "n_banks": 4583,
+      "rank_run_risk": 946,
+      "rank_tier1": 4171,
+      "rank_classic": 3779,
+      "run_driven": false
+    },
+    {
+      "cert": 5520,
+      "name": "SANTA ANNA NATIONAL BANK",
+      "faildate": "2025-06-27",
+      "repdte": "20250331",
+      "quarters_before": 1,
+      "n_banks": 4453,
+      "rank_run_risk": 1007,
+      "rank_tier1": 1,
+      "rank_classic": 767,
+      "run_driven": false
+    },
+    {
+      "cert": 5520,
+      "name": "SANTA ANNA NATIONAL BANK",
+      "faildate": "2025-06-27",
+      "repdte": "20241231",
+      "quarters_before": 2,
+      "n_banks": 4474,
+      "rank_run_risk": 976,
+      "rank_tier1": 1,
+      "rank_classic": 505,
+      "run_driven": false
+    },
+    {
+      "cert": 5520,
+      "name": "SANTA ANNA NATIONAL BANK",
+      "faildate": "2025-06-27",
+      "repdte": "20240930",
+      "quarters_before": 3,
+      "n_banks": 4508,
+      "rank_run_risk": 973,
+      "rank_tier1": 1,
+      "rank_classic": 1575,
+      "run_driven": false
+    },
+    {
+      "cert": 5520,
+      "name": "SANTA ANNA NATIONAL BANK",
+      "faildate": "2025-06-27",
+      "repdte": "20240630",
+      "quarters_before": 4,
+      "n_banks": 4525,
+      "rank_run_risk": 983,
+      "rank_tier1": 1,
+      "rank_classic": 1579,
+      "run_driven": false
+    },
+    {
+      "cert": 5520,
+      "name": "SANTA ANNA NATIONAL BANK",
+      "faildate": "2025-06-27",
+      "repdte": "20240331",
+      "quarters_before": 5,
+      "n_banks": 4552,
+      "rank_run_risk": 985,
+      "rank_tier1": 1,
+      "rank_classic": 1592,
+      "run_driven": false
+    },
+    {
+      "cert": 5520,
+      "name": "SANTA ANNA NATIONAL BANK",
+      "faildate": "2025-06-27",
+      "repdte": "20231231",
+      "quarters_before": 6,
+      "n_banks": 4571,
+      "rank_run_risk": 943,
+      "rank_tier1": 1,
+      "rank_classic": 1669,
+      "run_driven": false
+    },
+    {
+      "cert": 57488,
+      "name": "METROPOLITAN CAPITAL B&T",
+      "faildate": "2026-01-30",
+      "repdte": "20250930",
+      "quarters_before": 2,
+      "n_banks": 4374,
+      "rank_run_risk": 986,
+      "rank_tier1": 1714,
+      "rank_classic": 5,
+      "run_driven": false
+    },
+    {
+      "cert": 57488,
+      "name": "METROPOLITAN CAPITAL B&T",
+      "faildate": "2026-01-30",
+      "repdte": "20250630",
+      "quarters_before": 3,
+      "n_banks": 4410,
+      "rank_run_risk": 1001,
+      "rank_tier1": 1698,
+      "rank_classic": 3,
+      "run_driven": false
+    },
+    {
+      "cert": 57488,
+      "name": "METROPOLITAN CAPITAL B&T",
+      "faildate": "2026-01-30",
+      "repdte": "20250331",
+      "quarters_before": 4,
+      "n_banks": 4453,
+      "rank_run_risk": 1007,
+      "rank_tier1": 1714,
+      "rank_classic": 3,
+      "run_driven": false
+    },
+    {
+      "cert": 57488,
+      "name": "METROPOLITAN CAPITAL B&T",
+      "faildate": "2026-01-30",
+      "repdte": "20241231",
+      "quarters_before": 5,
+      "n_banks": 4474,
+      "rank_run_risk": 976,
+      "rank_tier1": 1682,
+      "rank_classic": 3,
+      "run_driven": false
+    },
+    {
+      "cert": 57488,
+      "name": "METROPOLITAN CAPITAL B&T",
+      "faildate": "2026-01-30",
+      "repdte": "20240930",
+      "quarters_before": 6,
+      "n_banks": 4508,
+      "rank_run_risk": 973,
+      "rank_tier1": 2343,
+      "rank_classic": 29,
+      "run_driven": false
+    },
+    {
+      "cert": 25796,
+      "name": "COMMUNITY BANK AND TRUST - WEST GEORGIA",
+      "faildate": "2026-05-01",
+      "repdte": "20260331",
+      "quarters_before": 1,
+      "n_banks": 4278,
+      "rank_run_risk": 1010,
+      "rank_tier1": 1733,
+      "rank_classic": 3,
+      "run_driven": false
+    },
+    {
+      "cert": 25796,
+      "name": "COMMUNITY BANK AND TRUST - WEST GEORGIA",
+      "faildate": "2026-05-01",
+      "repdte": "20251231",
+      "quarters_before": 2,
+      "n_banks": 4336,
+      "rank_run_risk": 977,
+      "rank_tier1": 1716,
+      "rank_classic": 37,
+      "run_driven": false
+    },
+    {
+      "cert": 25796,
+      "name": "COMMUNITY BANK AND TRUST - WEST GEORGIA",
+      "faildate": "2026-05-01",
+      "repdte": "20250930",
+      "quarters_before": 3,
+      "n_banks": 4374,
+      "rank_run_risk": 986,
+      "rank_tier1": 1717,
+      "rank_classic": 24,
+      "run_driven": false
+    },
+    {
+      "cert": 25796,
+      "name": "COMMUNITY BANK AND TRUST - WEST GEORGIA",
+      "faildate": "2026-05-01",
+      "repdte": "20250630",
+      "quarters_before": 4,
+      "n_banks": 4410,
+      "rank_run_risk": 1001,
+      "rank_tier1": 1696,
+      "rank_classic": 6,
+      "run_driven": false
+    },
+    {
+      "cert": 25796,
+      "name": "COMMUNITY BANK AND TRUST - WEST GEORGIA",
+      "faildate": "2026-05-01",
+      "repdte": "20250331",
+      "quarters_before": 5,
+      "n_banks": 4453,
+      "rank_run_risk": 1007,
+      "rank_tier1": 1720,
+      "rank_classic": 14,
+      "run_driven": false
+    },
+    {
+      "cert": 25796,
+      "name": "COMMUNITY BANK AND TRUST - WEST GEORGIA",
+      "faildate": "2026-05-01",
+      "repdte": "20241231",
+      "quarters_before": 6,
+      "n_banks": 4474,
+      "rank_run_risk": 976,
+      "rank_tier1": 1702,
+      "rank_classic": 10,
+      "run_driven": false
+    },
+    {
+      "cert": 28722,
+      "name": "KENTLAND FS&LA",
+      "faildate": "2026-07-10",
+      "repdte": "20260331",
+      "quarters_before": 2,
+      "n_banks": 4278,
+      "rank_run_risk": 1010,
+      "rank_tier1": 1734,
+      "rank_classic": 34,
+      "run_driven": false
+    },
+    {
+      "cert": 28722,
+      "name": "KENTLAND FS&LA",
+      "faildate": "2026-07-10",
+      "repdte": "20251231",
+      "quarters_before": 3,
+      "n_banks": 4336,
+      "rank_run_risk": 977,
+      "rank_tier1": 1712,
+      "rank_classic": 25,
+      "run_driven": false
+    },
+    {
+      "cert": 28722,
+      "name": "KENTLAND FS&LA",
+      "faildate": "2026-07-10",
+      "repdte": "20250930",
+      "quarters_before": 4,
+      "n_banks": 4374,
+      "rank_run_risk": 986,
+      "rank_tier1": 1716,
+      "rank_classic": 23,
+      "run_driven": false
+    },
+    {
+      "cert": 28722,
+      "name": "KENTLAND FS&LA",
+      "faildate": "2026-07-10",
+      "repdte": "20250630",
+      "quarters_before": 5,
+      "n_banks": 4410,
+      "rank_run_risk": 1001,
+      "rank_tier1": 3867,
+      "rank_classic": 103,
+      "run_driven": false
+    },
+    {
+      "cert": 28722,
+      "name": "KENTLAND FS&LA",
+      "faildate": "2026-07-10",
+      "repdte": "20250331",
+      "quarters_before": 6,
+      "n_banks": 4453,
+      "rank_run_risk": 1007,
+      "rank_tier1": 1716,
+      "rank_classic": 79,
+      "run_driven": false
+    },
+    {
+      "cert": 25744,
+      "name": "SMALL BUSINESS BANK",
+      "faildate": "2026-07-17",
+      "repdte": "20260331",
+      "quarters_before": 2,
+      "n_banks": 4278,
+      "rank_run_risk": 1010,
+      "rank_tier1": 2843,
+      "rank_classic": 44,
+      "run_driven": false
+    },
+    {
+      "cert": 25744,
+      "name": "SMALL BUSINESS BANK",
+      "faildate": "2026-07-17",
+      "repdte": "20251231",
+      "quarters_before": 3,
+      "n_banks": 4336,
+      "rank_run_risk": 977,
+      "rank_tier1": 3573,
+      "rank_classic": 44,
+      "run_driven": false
+    },
+    {
+      "cert": 25744,
+      "name": "SMALL BUSINESS BANK",
+      "faildate": "2026-07-17",
+      "repdte": "20250930",
+      "quarters_before": 4,
+      "n_banks": 4374,
+      "rank_run_risk": 986,
+      "rank_tier1": 3938,
+      "rank_classic": 159,
+      "run_driven": false
+    },
+    {
+      "cert": 25744,
+      "name": "SMALL BUSINESS BANK",
+      "faildate": "2026-07-17",
+      "repdte": "20250630",
+      "quarters_before": 5,
+      "n_banks": 4410,
+      "rank_run_risk": 1001,
+      "rank_tier1": 4138,
+      "rank_classic": 707,
+      "run_driven": false
+    },
+    {
+      "cert": 25744,
+      "name": "SMALL BUSINESS BANK",
+      "faildate": "2026-07-17",
+      "repdte": "20250331",
+      "quarters_before": 6,
+      "n_banks": 4453,
+      "rank_run_risk": 1007,
+      "rank_tier1": 4119,
+      "rank_classic": 261,
+      "run_driven": false
+    }
+  ],
+  "section_b_deposit_flight": {
+    "note": "run_risk_score requires uninsured-deposit disclosure (DEPUNA), reported only by banks the FDIC treats as large enough to require it (roughly $1B+ in assets, ~900 of ~4,700 banks in this quarter). It is undefined, not zero, for the rest -- there is no 'all-bank run_risk_score' to report.",
+    "reporters_n": 897,
+    "all_banks_n": 4636,
+    "on_reporting_banks": {
+      "run_risk_raw": {
+        "n": 897,
+        "auc": 0.637,
+        "top_decile_hit_rate": 0.202,
+        "base_rate": 0.1,
+        "lift": 2.02
+      },
+      "tier1_raw": {
+        "n": 897,
+        "auc": 0.391,
+        "top_decile_hit_rate": 0.09,
+        "base_rate": 0.1,
+        "lift": 0.9
+      },
+      "run_risk_seasonal_adj": {
+        "n": 897,
+        "auc": 0.554,
+        "top_decile_hit_rate": 0.135,
+        "base_rate": 0.1,
+        "lift": 1.34
+      }
+    },
+    "tier1_on_all_banks_for_context": {
+      "n": 4636,
+      "auc": 0.418,
+      "top_decile_hit_rate": 0.071,
+      "base_rate": 0.1,
+      "lift": 0.71
+    }
+  },
+  "section_c_precision": {
+    "k": 50,
+    "n_hits": 4,
+    "hit_names": [
+      "SILICON VALLEY BANK",
+      "REPUBLIC BANK",
+      "SIGNATURE BANK",
+      "FIRST REPUBLIC BANK"
+    ],
+    "n_survivors_flagged": 46,
+    "survivor_deposit_changes": [
+      {
+        "cert": 27330,
+        "name": "SILVERGATE BANK",
+        "dep_change_pct": -76.3
+      },
+      {
+        "cert": 33497,
+        "name": "CHARLES SCHWAB PREMIER BANK, SSB",
+        "dep_change_pct": -19.5
+      },
+      {
+        "cert": 57510,
+        "name": "AVIDBANK",
+        "dep_change_pct": -11.3
+      },
+      {
+        "cert": 57450,
+        "name": "CHARLES SCHWAB BANK, SSB",
+        "dep_change_pct": -10.5
+      },
+      {
+        "cert": 59108,
+        "name": "CHARLES SCHWAB TRUST BANK",
+        "dep_change_pct": -10.2
+      },
+      {
+        "cert": 1281,
+        "name": "WASHINGTON TRUST BANK",
+        "dep_change_pct": -9.6
+      },
+      {
+        "cert": 34788,
+        "name": "AMERICAN BUSINESS BANK",
+        "dep_change_pct": -9.3
+      },
+      {
+        "cert": 983,
+        "name": "COMERICA BANK",
+        "dep_change_pct": -9.1
+      },
+      {
+        "cert": 4799,
+        "name": "INTRUST BANK, NATIONAL ASSOCIATION",
+        "dep_change_pct": -7.0
+      },
+      {
+        "cert": 23474,
+        "name": "THE AMERICAN NATIONAL BANK OF TEXAS",
+        "dep_change_pct": -6.2
+      },
+      {
+        "cert": 19220,
+        "name": "ANB BANK",
+        "dep_change_pct": -4.9
+      },
+      {
+        "cert": 5510,
+        "name": "FROST BANK",
+        "dep_change_pct": -4.0
+      },
+      {
+        "cert": 34507,
+        "name": "PRINCIPAL BANK",
+        "dep_change_pct": -3.7
+      },
+      {
+        "cert": 3256,
+        "name": "HORIZON BANK, SSB",
+        "dep_change_pct": -3.7
+      },
+      {
+        "cert": 2270,
+        "name": "ZIONS BANCORPORATION, N.A.",
+        "dep_change_pct": -3.4
+      }
+    ]
+  },
+  "section_d_variants": {
+    "mtm_equity_ratio_alone": {
+      "Silicon Valley Bank": {
+        "rank": 13,
+        "of": 4713
+      },
+      "Signature Bank": {
+        "rank": 955,
+        "of": 4713
+      },
+      "First Republic Bank": {
+        "rank": 785,
+        "of": 4713
+      },
+      "Republic Bank (Republic First)": {
+        "rank": 4,
+        "of": 4713
+      },
+      "Heartland Tri-State Bank": {
+        "rank": 669,
+        "of": 4713
+      },
+      "Citizens Bank (Sac City)": {
+        "rank": 214,
+        "of": 4713
+      },
+      "First National Bank of Lindsay": {
+        "rank": 3935,
+        "of": 4713
+      },
+      "Pulaski Savings Bank": {
+        "rank": 3287,
+        "of": 4713
+      },
+      "Santa Anna National Bank": {
+        "rank": 1732,
+        "of": 4713
+      }
+    },
+    "uninsured_share_alone": {
+      "Silicon Valley Bank": {
+        "rank": 9,
+        "of": 917
+      },
+      "Signature Bank": {
+        "rank": 5,
+        "of": 917
+      },
+      "First Republic Bank": {
+        "rank": 31,
+        "of": 917
+      },
+      "Republic Bank (Republic First)": {
+        "rank": 52,
+        "of": 917
+      },
+      "Heartland Tri-State Bank": null,
+      "Citizens Bank (Sac City)": null,
+      "First National Bank of Lindsay": null,
+      "Pulaski Savings Bank": null,
+      "Santa Anna National Bank": null
+    },
+    "combined_run_risk_score": {
+      "Silicon Valley Bank": {
+        "rank": 1,
+        "of": 917
+      },
+      "Signature Bank": {
+        "rank": 24,
+        "of": 917
+      },
+      "First Republic Bank": {
+        "rank": 33,
+        "of": 917
+      },
+      "Republic Bank (Republic First)": {
+        "rank": 2,
+        "of": 917
+      },
+      "Heartland Tri-State Bank": null,
+      "Citizens Bank (Sac City)": null,
+      "First National Bank of Lindsay": null,
+      "Pulaski Savings Bank": null,
+      "Santa Anna National Bank": null
+    },
+    "liquidity_cover_alone": {
+      "Silicon Valley Bank": {
+        "rank": 59,
+        "of": 917
+      },
+      "Signature Bank": {
+        "rank": 109,
+        "of": 917
+      },
+      "First Republic Bank": {
+        "rank": 7,
+        "of": 917
+      },
+      "Republic Bank (Republic First)": {
+        "rank": 101,
+        "of": 917
+      },
+      "Heartland Tri-State Bank": null,
+      "Citizens Bank (Sac City)": null,
+      "First National Bank of Lindsay": null,
+      "Pulaski Savings Bank": null,
+      "Santa Anna National Bank": null
+    }
+  },
+  "section_e_run_threshold": {
+    "as_of": "2022-12-31",
+    "modeled_threshold_before_htm_sale": 38487.0,
+    "modeled_threshold_after_htm_at_fair_value": 114655.0,
+    "actual_outflow_march_9_2023_billion": 42.0,
+    "actual_queued_march_10_2023_billion": 100.0,
+    "note": "Fields reported in $000s by FDIC API; converted to $B here. Actual outflow figures are publicly reported (not from FDIC filings) -- see README citations."
+  },
+  "d1_permutation_test": {
+    "n_banks": 4700,
+    "top_k": 33,
+    "n_failures": 4,
+    "p_simulated": 5e-06,
+    "p_closed_form": 2.015e-09,
+    "n_trials": 200000
+  }
+}
