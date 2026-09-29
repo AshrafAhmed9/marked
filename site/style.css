@@ -208,6 +208,7 @@ button.primary:disabled { opacity: 0.5; cursor: not-allowed; }
 .stat .value { font-size: 1.4rem; font-weight: 700; margin-top: 4px; font-family: var(--font-mono); }
 .stat .value.risk { color: var(--accent); }
 .stat .value.safe { color: var(--safe); }
+.stat .value.warn { color: var(--warn); }
 
 .slider-row { margin: 18px 0; }
 .slider-row label { display: block; font-size: 0.88rem; color: var(--text-dim); margin-bottom: 8px; }

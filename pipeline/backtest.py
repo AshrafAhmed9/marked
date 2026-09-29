@@ -363,8 +363,13 @@ def section_e_run_threshold_reality_check() -> dict:
     r = row.iloc[0]
     return dict(
         as_of="2022-12-31",
-        modeled_threshold_before_htm_sale=round(float(r["run_threshold_dollars"]) / 1000, 1),  # $M -> $B (fields are in $000s)
-        modeled_threshold_after_htm_at_fair_value=round(float(r["run_threshold_after_htm"]) / 1000, 1),
+        # UNIT BUG FOUND during freeze review: FDIC fields are in $000s (not
+        # $M), so converting to $B requires /1_000_000, not /1_000. The
+        # original code divided by 1,000 and mislabeled the result "$B" --
+        # it was actually $M (38487.0 "billion" would have been a wildly
+        # wrong headline number, ~1000x SVB's actual balance sheet). Fixed.
+        modeled_threshold_before_htm_sale=round(float(r["run_threshold_dollars"]) / 1_000_000, 2),
+        modeled_threshold_after_htm_at_fair_value=round(float(r["run_threshold_after_htm"]) / 1_000_000, 2),
         actual_outflow_march_9_2023_billion=42.0,
         actual_queued_march_10_2023_billion=100.0,
         note="Fields reported in $000s by FDIC API; converted to $B here. "
