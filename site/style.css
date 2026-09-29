@@ -258,6 +258,13 @@ table.data tbody tr:hover { background: var(--panel-2); }
   nav.tabs { overflow-x: auto; }
 }
 
+@media (max-width: 480px) {
+  /* belt-and-suspenders on top of the min-width:0 fix above: force a
+     single column on phone-width screens so the grid never has to shrink
+     content to fit a 2-column track at all */
+  .stat-grid { grid-template-columns: 1fr; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
