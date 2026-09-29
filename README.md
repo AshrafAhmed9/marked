@@ -1,5 +1,8 @@
 # Marked
 
+[![tests](https://github.com/AshrafAhmed9/marked/actions/workflows/tests.yml/badge.svg)](https://github.com/AshrafAhmed9/marked/actions/workflows/tests.yml)
+[![Deploy site to GitHub Pages](https://github.com/AshrafAhmed9/marked/actions/workflows/pages.yml/badge.svg)](https://github.com/AshrafAhmed9/marked/actions/workflows/pages.yml)
+
 **Every US bank, ranked on run risk, using only public filings.**
 
 Five months before Silicon Valley Bank failed, Marked ranked it **#1 of 4,713 banks**.
