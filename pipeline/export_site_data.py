@@ -55,24 +55,44 @@ def _row_to_point(q: str, r: pd.Series) -> dict:
     )
 
 
-def build_all_bank_timeseries(certs: set[int]) -> dict[int, dict]:
-    """Scores each quarter exactly once (score_quarter_df re-scores all
-    ~4,700 banks per call, so doing this per-bank-per-quarter as originally
-    written was O(banks x quarters) full rescans -- ~1,400 full-population
-    scoring passes for 14 banks. This does 99 passes total, one per quarter,
-    and pulls out every requested bank's row from each."""
-    points_by_cert: dict[int, list[dict]] = {c: [] for c in certs}
+def build_all_bank_timeseries(
+    full_history_certs: set[int],
+    light_certs: set[int],
+    light_quarters: int = 12,
+) -> dict[int, dict]:
+    """Scores each quarter exactly once and pulls every requested bank's row
+    out via an O(1) dict lookup (not a per-cert boolean mask, which would be
+    O(banks_requested x rows_in_quarter) per quarter -- at ~4,500 requested
+    banks x 4,700 rows x 102 quarters that's >2 billion comparisons and was
+    the actual bottleneck the first time this ran with only 16 banks).
+
+    full_history_certs get every quarter available (named failures + the
+    hand-picked comparators discussed in the README). light_certs (the rest
+    of the ~4,500 banks in the search index) get only the last
+    `light_quarters` -- enough to show a real recent trend on the site
+    without exporting ~100 quarters x 4,500 banks of JSON."""
+    all_certs = full_history_certs | light_certs
+    points_by_cert: dict[int, list[dict]] = {c: [] for c in all_certs}
+    n = len(ALL_QUARTERS)
     for i, q in enumerate(ALL_QUARTERS):
+        is_light_window = i >= n - light_quarters
+        wanted = all_certs if is_light_window else full_history_certs
+        if not wanted:
+            continue
         df = score_quarter_df(q)
         if df.empty:
             continue
-        for cert in certs:
-            row = df[df["cert"] == cert]
-            if row.empty:
+        # build the O(1) lookup once per quarter, not once per requested bank
+        by_cert = df.set_index("cert")
+        for cert in wanted:
+            if cert not in by_cert.index:
                 continue
-            points_by_cert[cert].append(_row_to_point(q, row.iloc[0]))
+            row = by_cert.loc[cert]
+            if isinstance(row, pd.DataFrame):  # duplicate cert guard, shouldn't happen but don't crash
+                row = row.iloc[0]
+            points_by_cert[cert].append(_row_to_point(q, row))
         if (i + 1) % 20 == 0:
-            print(f"  scored {i+1}/{len(ALL_QUARTERS)} quarters...")
+            print(f"  scored {i+1}/{n} quarters ({len(wanted)} banks this quarter)...")
     out = {}
     for cert, points in points_by_cert.items():
         if not points:
@@ -82,18 +102,35 @@ def build_all_bank_timeseries(certs: set[int]) -> dict[int, dict]:
     return out
 
 
-def build_search_index() -> list[dict]:
+def build_search_index(must_include: set[int] = frozenset()) -> list[dict]:
+    """Every currently-operating bank (from the last 8 quarters) plus every
+    cert in `must_include` (named failures and comparators, several of which
+    stopped filing years before the last-8-quarters window -- SVB's last
+    filing is 2022Q4, well outside any recent window) get a search index
+    entry, so every bank with a full detail page is actually findable."""
     seen = {}
     for q in ALL_QUARTERS[-8:]:  # last 2 years is enough for a name+cert search index
         df = score_quarter_df(q)
         for _, r in df.iterrows():
             seen[int(r["cert"])] = r["name"]
-    for cert, info in NAMED_FAILURES.items():
-        if cert not in seen:
-            df = score_quarter_df("20220930")
-            row = df[df["cert"] == cert]
-            if not row.empty:
-                seen[cert] = row.iloc[0]["name"]
+
+    missing = set(must_include) - set(seen.keys())
+    if missing:
+        # walk backwards from the most recent quarter until each missing
+        # cert's last known filing is found, instead of assuming one fixed
+        # quarter works for every bank (they failed on different dates)
+        for q in reversed(ALL_QUARTERS):
+            if not missing:
+                break
+            df = score_quarter_df(q)
+            if df.empty:
+                continue
+            by_cert = df.set_index("cert")
+            found = missing & set(by_cert.index)
+            for cert in found:
+                seen[cert] = by_cert.loc[cert, "name"]
+            missing -= found
+
     index = [{"cert": c, "name": n} for c, n in sorted(seen.items(), key=lambda kv: kv[1])]
     return index
 
@@ -121,12 +158,7 @@ def build_today() -> dict:
 def main():
     print(f"Quarters available: {len(ALL_QUARTERS)} ({ALL_QUARTERS[0]}..{ALL_QUARTERS[-1]})")
 
-    print("Building search index...")
-    index = build_search_index()
-    (SITE_DATA / "search_index.json").write_text(json.dumps(index))
-    print(f"  {len(index)} banks")
-
-    certs_to_export = set(NAMED_FAILURES.keys()) | {
+    full_history_certs = set(NAMED_FAILURES.keys()) | {
         27330,  # Silvergate
         33497, 57450, 59108,  # Schwab entities
         2270,   # Zions
@@ -137,14 +169,32 @@ def main():
         25851,  # Heartland Tri-State (fraud, honest limit)
         29730, 32633,  # IndyMac, WaMu (D2, 2008 era)
     }
-    print(f"Building bank timeseries for {len(certs_to_export)} banks (scoring each quarter once)...")
-    all_ts = build_all_bank_timeseries(certs_to_export)
+
+    print("Building search index...")
+    index = build_search_index(must_include=full_history_certs)
+    (SITE_DATA / "search_index.json").write_text(json.dumps(index, separators=(",", ":")))
+    print(f"  {len(index)} banks")
+
+    # every other bank in the search index gets a light (last-3-years)
+    # detail page instead of "no data exported" -- the search box promises
+    # "search any of ~4,700 US banks" and up to this point only 16 of them
+    # actually had a page behind that promise.
+    light_certs = {row["cert"] for row in index} - full_history_certs
+    print(f"Building bank timeseries: {len(full_history_certs)} full-history + "
+          f"{len(light_certs)} light (last 12 quarters) = {len(full_history_certs) + len(light_certs)} banks total...")
+    all_ts = build_all_bank_timeseries(full_history_certs, light_certs)
+    written, skipped = 0, 0
     for cert, data in all_ts.items():
         if data is None:
-            print(f"  {cert}: no data, skipped")
+            skipped += 1
             continue
-        (SITE_DATA / f"bank_{cert}.json").write_text(json.dumps(data))
-        print(f"  {cert}: {data['name']} ({len(data['points'])} quarters)")
+        (SITE_DATA / f"bank_{cert}.json").write_text(json.dumps(data, separators=(",", ":")))
+        written += 1
+    print(f"  wrote {written} bank files, skipped {skipped} with no data")
+    for cert in full_history_certs:
+        d = all_ts.get(cert)
+        if d:
+            print(f"    {cert}: {d['name']} ({len(d['points'])} quarters, full history)")
 
     print("Copying backtest results...")
     shutil.copy(RESULTS_DIR / "backtest.json", SITE_DATA / "backtest.json")
