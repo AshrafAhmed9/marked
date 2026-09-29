@@ -1,6 +1,12 @@
 // Marked — static site logic. No framework, no build step: fetches the
 // JSON files pipeline/export_site_data.py writes and renders them.
 
+function escapeHtml(str) {
+  const div = document.createElement("div");
+  div.textContent = String(str ?? "");
+  return div.innerHTML;
+}
+
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
@@ -70,7 +76,7 @@ searchInput.addEventListener("input", () => {
   }
   const matches = searchIndex.filter((b) => b.name.toLowerCase().includes(q)).slice(0, 20);
   resultsList.innerHTML = matches
-    .map((b) => `<li><button data-cert="${b.cert}">${b.name}</button></li>`)
+    .map((b) => `<li><button data-cert="${b.cert}">${escapeHtml(b.name)}</button></li>`)
     .join("") || `<li><span class="hint">No matches.</span></li>`;
   resultsList.classList.remove("hidden");
 });
@@ -136,7 +142,7 @@ function renderBankDetail(container, data) {
   }
 
   container.innerHTML = `
-    <p class="bank-name">${data.name}${failed ? `<span class="badge failed">Failed ${data.failure.faildate}</span>` : ""}</p>
+    <p class="bank-name">${escapeHtml(data.name)}${failed ? `<span class="badge failed">Failed ${data.failure.faildate}</span>` : ""}</p>
     <p class="bank-meta">${failed ? data.failure.note : "Currently operating (per latest FDIC filing)."}</p>
 
     <div class="stat-grid">
@@ -178,18 +184,31 @@ function renderBankDetail(container, data) {
   const slider = $("#run-slider", container);
   if (slider) {
     const readout = $("#run-slider-readout", container);
-    const uninsuredTotalK = latest.uninsured_share !== null ? latest.uninsured_share * latest.asset_k * ((latest.uninsured_share) > 0 ? 1 : 1) : null;
-    // uninsured deposit dollar amount isn't directly exported; approximate
-    // via the run-threshold fields, which ARE exact dollar amounts from the
-    // scoring pipeline.
+    // Total uninsured deposits aren't exported directly, but they're
+    // recoverable exactly from two fields the pipeline does export:
+    // liquidity_cover = (cash + AFS) / uninsured_deposits, and
+    // run_threshold_dollars_k = cash + AFS. So uninsured_deposits =
+    // run_threshold_dollars_k / liquidity_cover. Both come straight out of
+    // pipeline/score.py -- this isn't a separate estimate.
+    const uninsuredDepositsK = (latest.liquidity_cover && latest.liquidity_cover > 0 && latest.run_threshold_dollars_k !== null)
+      ? latest.run_threshold_dollars_k / latest.liquidity_cover
+      : null;
     const updateReadout = () => {
       const pct = parseInt(slider.value, 10);
-      const liquidThresholdPct = latest.run_threshold_dollars_k !== null && latest.asset_k
-        ? null : null;
-      readout.innerHTML = `Withdrawing <strong>${pct}%</strong> of uninsured deposits: ` +
-        (latest.run_threshold_dollars_k !== null
-          ? `cash + AFS securities cover withdrawals up to <strong>${fmtDollarsK(latest.run_threshold_dollars_k)}</strong> before the bank must start selling held-to-maturity bonds at a loss.`
-          : "this bank does not report uninsured deposits, so a threshold can't be estimated.");
+      if (uninsuredDepositsK === null) {
+        readout.innerHTML = "This bank does not report uninsured deposits, so a withdrawal threshold can't be estimated.";
+        return;
+      }
+      const withdrawnK = uninsuredDepositsK * (pct / 100);
+      let verdict;
+      if (withdrawnK <= latest.run_threshold_dollars_k) {
+        verdict = "covered by cash and available-for-sale securities alone.";
+      } else if (latest.run_threshold_after_htm_k !== null && withdrawnK <= latest.run_threshold_after_htm_k) {
+        verdict = `<strong style="color:var(--warn)">forces the sale of held-to-maturity bonds</strong>, realizing their unbooked loss.`;
+      } else {
+        verdict = `<strong style="color:var(--accent)">exceeds what the bank's assets can cover even marked to market</strong> — balance-sheet insolvency.`;
+      }
+      readout.innerHTML = `Withdrawing <strong>${pct}%</strong> of uninsured deposits (${fmtDollarsK(withdrawnK)} of ${fmtDollarsK(uninsuredDepositsK)} total) as of ${fmtQ(latest.repdte)}: ${verdict}`;
     };
     slider.addEventListener("input", updateReadout);
     updateReadout();
@@ -198,7 +217,13 @@ function renderBankDetail(container, data) {
 
 // ---------- backtest tab ----------
 async function renderBacktest() {
-  const data = await loadJSON("data/backtest.json");
+  let data;
+  try {
+    data = await loadJSON("data/backtest.json");
+  } catch (e) {
+    $("#backtest-table").innerHTML = `<p class="hint">Backtest data failed to load. Try refreshing, or see results/REPORT.md in the repo.</p>`;
+    return;
+  }
   const rows = data.section_a_failure_ranks.filter((r) => r.run_driven);
   const table = `
     <table class="data">
@@ -206,7 +231,7 @@ async function renderBacktest() {
       <tbody>
         ${rows.map((r) => `
           <tr>
-            <td>${r.name}</td><td>${r.faildate}</td><td>T-${r.quarters_before}</td><td>${r.n_banks}</td>
+            <td>${escapeHtml(r.name)}</td><td>${r.faildate}</td><td>T-${r.quarters_before}</td><td>${r.n_banks}</td>
             <td><strong>${r.rank_run_risk ?? "—"}</strong></td><td>${r.rank_tier1 ?? "—"}</td><td>${r.rank_classic ?? "—"}</td>
           </tr>`).join("")}
       </tbody>
@@ -217,7 +242,7 @@ async function renderBacktest() {
         <thead><tr><th>Bank</th><th>Failed</th><th>Cause</th><th>Quarters before</th><th>Run-risk rank</th><th>Classic ML rank</th></tr></thead>
         <tbody>
           ${data.section_a_failure_ranks.filter((r) => !r.run_driven).map((r) => `
-            <tr><td>${r.name}</td><td>${r.faildate}</td><td>${r.name.includes("HEARTLAND") ? "fraud" : "other/credit"}</td><td>T-${r.quarters_before}</td>
+            <tr><td>${escapeHtml(r.name)}</td><td>${r.faildate}</td><td>${r.name.includes("HEARTLAND") ? "fraud" : "other/credit"}</td><td>T-${r.quarters_before}</td>
             <td>${r.rank_run_risk ?? "—"}</td><td>${r.rank_classic ?? "—"}</td></tr>`).join("")}
         </tbody>
       </table>
@@ -248,7 +273,7 @@ async function renderBacktest() {
     const d2 = await loadJSON("data/d2_depth.json");
     const rows2 = Object.entries(d2.named).map(([name, pts]) => {
       const last = pts[pts.length - 1];
-      return `<tr><td>${name}</td><td>${fmtQ(last.repdte)}</td><td>#${last.rank_run_risk} of ${last.n_banks}</td><td>#${last.rank_tier1} of ${last.n_banks}</td></tr>`;
+      return `<tr><td>${escapeHtml(name)}</td><td>${fmtQ(last.repdte)}</td><td>#${last.rank_run_risk} of ${last.n_banks}</td><td>#${last.rank_tier1} of ${last.n_banks}</td></tr>`;
     }).join("");
     $("#d2-panel").innerHTML = `
       <h2>Applied unchanged to the 2008 crisis</h2>
@@ -268,7 +293,7 @@ async function renderToday() {
   try {
     const t = await loadJSON("data/today.json");
     const rows = t.top_15.map((r) => `
-      <tr><td>${r.name}</td><td>#${r.rank_run_risk}</td><td>${(r.uninsured_share * 100).toFixed(0)}%</td><td>${(r.mtm_equity_ratio * 100).toFixed(1)}%</td></tr>
+      <tr><td>${escapeHtml(r.name)}</td><td>#${r.rank_run_risk}</td><td>${(r.uninsured_share * 100).toFixed(0)}%</td><td>${(r.mtm_equity_ratio * 100).toFixed(1)}%</td></tr>
     `).join("");
     panel.innerHTML = `
       <h2>Where things stand today (${fmtQ(t.as_of)})</h2>
