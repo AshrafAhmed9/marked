@@ -6,8 +6,8 @@ Five months before Silicon Valley Bank failed, Marked ranked it **#1 of 4,713 ba
 The regulatory capital ratio — the number banks report as "well capitalized," the
 number most public tools show — ranked it **#3,500**.
 
-Live site: **[link to be added on deploy]**
-Demo video: **[link to be added]**
+Live site: **https://ashrafahmed9.github.io/marked/**
+Demo video: **[to be added — see project owner for the Devpost submission link]**
 
 > Research prototype built for the Global Innovation Build Challenge V2. Not
 > financial advice, not a regulatory or diagnostic tool, and not an assertion
