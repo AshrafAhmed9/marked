@@ -14,19 +14,46 @@
 <meta name="twitter:title" content="Marked — bank run-risk from public filings" />
 <meta name="twitter:description" content="SVB ranked #1 of 4,713 banks, five months before it failed. The regulatory capital ratio ranked it #3,500." />
 <meta name="twitter:image" content="https://ashrafahmed9.github.io/marked/social-card.png" />
+<meta name="theme-color" content="#090b10" />
+<meta name="color-scheme" content="dark" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📉</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <div class="wrap">
   <header class="site">
-    <h1>Marked</h1>
+    <div class="brand-row">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <h1>Marked</h1>
+    </div>
     <p class="tagline">Bank run-risk, computed from public filings — not credit ratings, not regulatory capital ratios.</p>
+
+    <div class="hero-stat">
+      <p class="hero-stat-kicker">Measured, not asserted — five months before it failed</p>
+      <div class="hero-compare">
+        <div class="hero-figure risk">
+          <span class="num" data-countup data-countup-to="1">#1</span>
+          <span class="cap">Marked's rank for Silicon Valley Bank, of 4,713 US banks, in October 2022</span>
+        </div>
+        <div class="hero-vs" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+        <div class="hero-figure safe">
+          <span class="num" data-countup data-countup-to="3500">#3,500</span>
+          <span class="cap">SVB's rank on the regulatory Tier&nbsp;1 capital ratio — the number banks report as "well capitalized"</span>
+        </div>
+      </div>
+      <p class="hero-note">Backtested against every US bank failure since 2019, a second era (2008), an independent ML baseline, and a permutation test. Scoring formula frozen in git before any backtest ran. Search any of ~4,700 banks below, or see the full backtest.</p>
+    </div>
+
     <nav class="tabs" role="tablist" aria-label="Sections">
       <button role="tab" id="tab-bank" aria-selected="true" aria-controls="panel-bank">Search a bank</button>
       <button role="tab" id="tab-backtest" aria-selected="false" aria-controls="panel-backtest">Backtest</button>
       <button role="tab" id="tab-today" aria-selected="false" aria-controls="panel-today">Today</button>
       <button role="tab" id="tab-about" aria-selected="false" aria-controls="panel-about">How it works &amp; limits</button>
+      <span class="tab-indicator" aria-hidden="true"></span>
     </nav>
   </header>
 
@@ -35,6 +62,7 @@
       <div class="panel">
         <h2>Search any of ~4,700 US banks</h2>
         <div class="search-row">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
           <input type="search" id="bank-search" placeholder="Try “Silicon Valley Bank” or a bank name…" autocomplete="off" aria-label="Search bank name" />
         </div>
         <p class="hint" id="search-hint">Type at least 3 letters. Data: FDIC quarterly Call Reports, 2001–2026.</p>
@@ -83,7 +111,7 @@
   </main>
 
   <p class="disclaimer">
-    Research prototype for the Global Innovation Build Challenge V2, built from public FDIC Call Report data (banks.data.fdic.gov). Not financial advice, not a diagnostic or regulatory tool, and not an assertion that any currently operating bank will fail. See "How it works &amp; limits" for what this model does and does not capture. Source: <a href="https://github.com/ashrafahmed1232/marked" target="_blank" rel="noopener">GitHub</a>.
+    Research prototype for the Global Innovation Build Challenge V2, built from public FDIC Call Report data (banks.data.fdic.gov). Not financial advice, not a diagnostic or regulatory tool, and not an assertion that any currently operating bank will fail. See "How it works &amp; limits" for what this model does and does not capture. Source: <a href="https://github.com/AshrafAhmed9/marked" target="_blank" rel="noopener">GitHub</a>.
   </p>
 </div>
 

@@ -39,16 +39,33 @@ const tabs = [
   ["tab-today", "panel-today"],
   ["tab-about", "panel-about"],
 ];
+const tabIndicator = $(".tab-indicator");
+function positionTabIndicator(tabId) {
+  if (!tabIndicator) return;
+  const btn = $(`#${tabId}`);
+  if (!btn) return;
+  tabIndicator.style.width = `${btn.offsetWidth}px`;
+  tabIndicator.style.transform = `translateX(${btn.offsetLeft}px)`;
+}
 function activateTab(tabId) {
   for (const [t, p] of tabs) {
     const isActive = t === tabId;
     $(`#${t}`).setAttribute("aria-selected", String(isActive));
     $(`#${p}`).classList.toggle("hidden", !isActive);
   }
+  positionTabIndicator(tabId);
 }
 for (const [t] of tabs) {
   $(`#${t}`).addEventListener("click", () => activateTab(t));
 }
+window.addEventListener("resize", () => {
+  const active = tabs.find(([t]) => $(`#${t}`).getAttribute("aria-selected") === "true");
+  if (active) positionTabIndicator(active[0]);
+});
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(() => positionTabIndicator("tab-bank"));
+}
+positionTabIndicator("tab-bank");
 
 // ---------- data loading (lazy, cached) ----------
 const cache = {};
@@ -76,7 +93,7 @@ searchInput.addEventListener("input", () => {
   }
   const matches = searchIndex.filter((b) => b.name.toLowerCase().includes(q)).slice(0, 20);
   resultsList.innerHTML = matches
-    .map((b) => `<li><button data-cert="${b.cert}">${escapeHtml(b.name)}</button></li>`)
+    .map((b, i) => `<li><button data-cert="${b.cert}" data-idx="${i}">${escapeHtml(b.name)}</button></li>`)
     .join("") || `<li><span class="hint">No matches.</span></li>`;
   resultsList.classList.remove("hidden");
 });
@@ -86,11 +103,49 @@ resultsList.addEventListener("click", (e) => {
   showBank(parseInt(btn.dataset.cert, 10));
   resultsList.classList.add("hidden");
 });
+searchInput.addEventListener("keydown", (e) => {
+  const options = $$("button[data-cert]", resultsList);
+  if (!options.length || resultsList.classList.contains("hidden")) return;
+  const current = options.findIndex((o) => o.classList.contains("active-option"));
+  if (e.key === "ArrowDown") {
+    e.preventDefault();
+    const next = options[Math.min(current + 1, options.length - 1)];
+    options.forEach((o) => o.classList.remove("active-option"));
+    next.classList.add("active-option");
+    next.scrollIntoView({ block: "nearest" });
+  } else if (e.key === "ArrowUp") {
+    e.preventDefault();
+    const prev = options[Math.max(current - 1, 0)];
+    options.forEach((o) => o.classList.remove("active-option"));
+    prev.classList.add("active-option");
+    prev.scrollIntoView({ block: "nearest" });
+  } else if (e.key === "Enter") {
+    const active = options[Math.max(current, 0)];
+    if (active) {
+      e.preventDefault();
+      showBank(parseInt(active.dataset.cert, 10));
+      resultsList.classList.add("hidden");
+    }
+  } else if (e.key === "Escape") {
+    resultsList.classList.add("hidden");
+  }
+});
+
+function skeletonBankDetail() {
+  return `
+    <div class="skeleton skeleton-line" style="width:40%;height:22px;"></div>
+    <div class="skeleton skeleton-line" style="width:60%;margin-top:10px;"></div>
+    <div class="stat-grid" style="margin-top:18px;">
+      ${Array.from({ length: 4 }).map(() => `<div class="skeleton" style="height:70px;"></div>`).join("")}
+    </div>
+    <div class="skeleton skeleton-block" style="margin-top:18px;"></div>
+  `;
+}
 
 async function showBank(cert) {
   const detail = $("#bank-detail");
   detail.classList.remove("hidden");
-  detail.innerHTML = `<p class="hint">Loading…</p>`;
+  detail.innerHTML = skeletonBankDetail();
   let data;
   try {
     data = await loadJSON(`data/bank_${cert}.json`);
@@ -216,6 +271,7 @@ function renderBankDetail(container, data) {
 }
 
 // ---------- backtest tab ----------
+$("#backtest-table").innerHTML = `<div class="skeleton skeleton-block"></div>`;
 async function renderBacktest() {
   let data;
   try {
@@ -290,6 +346,7 @@ renderBacktest();
 // ---------- today tab ----------
 async function renderToday() {
   const panel = $("#today-panel");
+  panel.innerHTML = `<h2>Where things stand today</h2><div class="skeleton skeleton-block"></div>`;
   try {
     const t = await loadJSON("data/today.json");
     const rows = t.top_15.map((r) => `
@@ -318,3 +375,33 @@ renderToday();
 
 // Preselect SVB on load for a fast first impression
 loadJSON("data/search_index.json").then(() => showBank(24735)).catch(() => {});
+
+// ---------- hero stat count-up ----------
+function animateCountUp(el) {
+  const to = parseFloat(el.dataset.countupTo);
+  const isRank = el.textContent.trim().startsWith("#");
+  const finalText = isRank ? `#${to.toLocaleString()}` : to.toLocaleString();
+  const duration = 900;
+  const start = performance.now();
+  let done = false;
+  function finish() {
+    if (done) return;
+    done = true;
+    el.textContent = finalText;
+  }
+  function frame(now) {
+    if (done) return;
+    const t = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - t, 3);
+    const val = Math.round(to * eased);
+    el.textContent = isRank ? `#${val.toLocaleString()}` : val.toLocaleString();
+    if (t < 1) requestAnimationFrame(frame);
+    else finish();
+  }
+  requestAnimationFrame(frame);
+  setTimeout(finish, duration + 150); // guarantees the correct final value even if rAF stalls (backgrounded tab, headless capture)
+}
+const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (!prefersReducedMotion) {
+  $$("[data-countup]").forEach(animateCountUp);
+}
