@@ -1,6 +1,6 @@
 # video/
 
-`marked_demo.mp4` (2:06) is a real screen recording of the live product,
+`marked_demo.mp4` (2:45) is a real screen recording of the live product,
 not a slide deck: a Playwright-driven browser actually types into the
 search box, clicks the result, drags the run-risk slider, switches tabs,
 and scrolls through the backtest -- captured frame by frame as it happens.
@@ -8,6 +8,16 @@ Narration is a local neural TTS voice (Kokoro, open-weight, not the
 robotic system voice), timed per-beat to match the real length of its
 own audio clip. Captions are burned in on top, synced to the narration at
 the sentence level.
+
+The opening leads with named, concrete harm (Roku's ~$487M, Circle's USDC
+depeg, startups missing payroll) before any product shot, so the real-world
+stakes land before the pitch does. A dedicated "why this holds up" beat
+(narration/demo_script.py's `09_rigor`) visits the site's own "How it
+works" panel and pulses the exact sentence stating the formula was frozen
+in git before any backtest ran -- the claim and its on-screen proof appear
+together, not just asserted in voiceover. A couple of moments (the hero
+stat, the run-risk rank, the insolvency verdict) get a brief CSS pulse/zoom
+to draw the eye, applied to the real DOM via Playwright, not added in post.
 
 ## Pipeline
 
