@@ -1,0 +1,17 @@
+SCRIPT = [
+    ("01", "March 9th, 2023. Forty two billion dollars left Silicon Valley Bank in a single day. Roku had roughly four hundred eighty seven million dollars there. Circle's stablecoin briefly lost its dollar peg."),
+    ("02", "Every capital ratio said the bank was fine."),
+    ("03", "Marked ranks every U.S. bank on run risk, from public filings alone."),
+    ("04", "Marked ranked Silicon Valley Bank number one of four thousand, seven hundred thirteen banks, five months before it failed, using only public filings."),
+    ("05", "Two views of the same bank. One line is flat, even rising. The other is collapsing toward zero."),
+    ("06", "The number: S V B ranked number one of four thousand, seven hundred thirteen banks. The regulatory Tier one capital ratio ranked it number three thousand, five hundred."),
+    ("07", "At ninety percent uninsured withdrawal, the model shows balance sheet insolvency. Forty two billion dollars actually left S V B on March ninth."),
+    ("08", "Every run-driven bank failure since 2019 landed in the top thirty three of roughly forty seven hundred banks, five quarters running."),
+    ("09", "Could this be luck? The odds that four random banks all land in the top thirty three: two times ten to the negative ninth."),
+    ("10", "It also predicted the 2023 deposit panic across hundreds of banks: an A U C of point six four, versus point three nine for the regulatory ratio."),
+    ("11", "A standard machine learning model, trained the ordinary way, ranks S V B number two thousand, six hundred seventy eight of four thousand, eight hundred thirteen — average. It still catches an ordinary credit failure at number twenty six. The two lenses catch different things."),
+    ("12", "Applied unchanged to the 2008 crisis: a real, honestly weaker result. A different crisis needs a different lens."),
+    ("13", "Rigor, not just a claim of it. Two real bugs were found and fixed while building this, documented in the README, not hidden."),
+    ("14", "Today, no bank currently matches the S V B pattern."),
+    ("15", "Marked. Bank run risk from public filings. Research prototype, not financial advice. Link in the description."),
+]
