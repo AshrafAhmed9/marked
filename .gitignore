@@ -6,3 +6,9 @@ data/raw/*.parquet
 export.log
 fetch.log
 export*.log
+.pytest_cache/
+.local/
+video/narration/audio/*.wav
+video/narration/captions/
+video/narration/recording/
+video/narration/*.mp4

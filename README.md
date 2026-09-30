@@ -10,11 +10,13 @@ The regulatory capital ratio — the number banks report as "well capitalized," 
 number most public tools show — ranked it **#3,500**.
 
 Live site: **https://ashrafahmed9.github.io/marked/**
-Demo video: **[to be added — see project owner for the Devpost submission link]**
+Demo video (2:45): **https://www.youtube.com/watch?v=w5S8zF83auY**
 
 > Research prototype built for the Global Innovation Build Challenge V2. Not
 > financial advice, not a regulatory or diagnostic tool, and not an assertion
 > that any currently operating bank will fail. See [Limits](#limits) below.
+
+![Marked's page for Silicon Valley Bank: run-risk rank #2 of 4,683 in Q4 2022 against a Tier 1 rank of #3,444, with the mark-to-market equity chart falling to zero](screenshots/0_svb_timeline_hero.png)
 
 ---
 
@@ -29,8 +31,7 @@ Deposits above $250,000 aren't covered by FDIC insurance. If a large share of
 uninsured depositors gets nervous and tries to withdraw at once, a bank can be
 forced to sell those bonds, crystallizing the hidden loss exactly when it can
 least afford it. That's what happened to Silicon Valley Bank. Roku had roughly
-$487M there ([its own 8-K filing](https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=roku)
-says so). Circle had $3.3B of USDC reserves at SVB, which briefly broke the
+$487M there, according to its March 2023 8-K filing. Circle had $3.3B of USDC reserves at SVB, which briefly broke the
 stablecoin's dollar peg. $42B left SVB in a single day; the FDIC closed it the
 next morning.
 
@@ -44,15 +45,18 @@ market, set against how much of its deposit base is uninsured and could run.
 Using only data that would have been publicly filed by each date (see
 [Look-ahead discipline](#look-ahead-discipline)):
 
-| Bank | Failed | Quarters before | Marked's rank | Tier 1 capital rank |
-|---|---|---|---|---|
-| Silicon Valley Bank | 2023-03-10 | 5 months (T-2) | **#1 of 4,713** | #3,500 |
-| Signature Bank | 2023-03-12 | 5 months (T-2) | **#24 of 4,713** | #1,924 |
-| First Republic Bank | 2023-05-01 | 5 months (T-2) | **#33 of 4,713** | #2,205 |
-| Republic Bank | 2024-04-26 | 5 months (T-2) | **#1 of 4,583** | #1,696 |
+Ranks from the second-to-last quarterly filing before each failure (T-2).
+For SVB that is Q3 2022, five months before it failed.
+
+| Bank | Failed | Marked's rank | Tier 1 capital rank |
+|---|---|---|---|
+| Silicon Valley Bank | 2023-03-10 | **#1 of 4,713** | #3,500 |
+| Signature Bank | 2023-03-12 | **#24 of 4,713** | #1,924 |
+| First Republic Bank | 2023-05-01 | **#33 of 4,683** | #2,205 |
+| Republic Bank | 2024-04-26 | **#1 of 4,571** | #1,667 |
 
 All four run-driven bank failures since 2019 land in the **top 33 of roughly
-4,700 banks**, across every one of the five quarters before they failed. The
+4,700 banks** in each of T-2 through T-6 (First Republic was #44 at T-1). The
 odds of that happening to four randomly chosen banks by chance: **2.0×10⁻⁹**
 (closed-form; confirmed by a 200,000-trial simulation — see
 `results/REPORT.md`, section D1).
@@ -84,10 +88,10 @@ loan/deposit ratio, brokered-deposit reliance) against every bank failure from
 2008–2012 — the standard approach most bank-failure ML work uses. Applied to
 Q3 2022:
 
-- **Silicon Valley Bank: ranked #2,678 of 4,813** — squarely average, not flagged.
-- **First Republic Bank: ranked #3,465 of 4,813** — among the *safest*-looking banks.
+- **Silicon Valley Bank: ranked #2,678 of 4,713** — squarely average, not flagged.
+- **First Republic Bank: ranked #3,465 of 4,713** — among the *safest*-looking banks.
 - **Citizens Bank (Sac City), which failed from ordinary credit losses in 2023:
-  ranked #26 of 4,813** — correctly flagged.
+  ranked #26 of 4,713** — correctly flagged.
 
 The two lenses catch different things. That's the point: SVB's failure wasn't
 a credit story, it was an accounting-gap story, and a model trained the usual
@@ -233,6 +237,17 @@ threshold checked against what actually happened at SVB.
 See the site's **"How it works & limits"** tab for the plain-language version.
 Technical version: `pipeline/score.py` is fully documented inline.
 
+## Repository layout
+
+```
+pipeline/   fetch, score (the frozen formula), classic ML baseline, backtest, 2008 check, site export
+tests/      formula math, look-ahead guard, foreign-branch filter (13 tests, run in CI)
+results/    REPORT.md and JSON output of the backtest
+site/       static site (HTML/CSS/JS, no build step) and the JSON it reads
+video/      demo video and the scripts that produced it
+screenshots/  screenshots of the live site
+```
+
 ## Reproduce it
 
 ```bash
@@ -280,14 +295,12 @@ HTML/CSS/JavaScript (no frontend framework, no build step, no charting
 library — the line charts are ~60 lines of hand-written SVG in
 `site/chart.js`), GitHub Pages.
 
-**AI tool disclosure:** built with Claude Code (Anthropic). All research
-questions (rules, prior art, past-winner analysis), pipeline code, the
-scoring formula's initial design, the static site, and this README were
-written with Claude Code as an active collaborator under my direction. All
-numeric claims were independently re-verified by running the actual pipeline
-against the live FDIC API, not taken on faith from the AI's output — see the
-two real bugs documented in [Limits](#limits) above, which were caught during
-that verification.
+**AI tool disclosure:** built with Claude Code (Anthropic). The research,
+pipeline code, the scoring formula's initial design, the static site, the demo
+video pipeline, and this README were written with Claude Code as an active
+collaborator under my direction. Every numeric claim was re-checked by running
+the pipeline against the live FDIC API rather than taken from the AI's output;
+the two bugs documented under [Limits](#limits) were caught that way.
 
 ## License
 
